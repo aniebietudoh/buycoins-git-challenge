@@ -1,5 +1,8 @@
 const url = 'https://api.github.com/graphql';
 
+// Remember to generate your github token and insert here
+const ghToken = "";
+
 const query = `
   query($username: String!) {
     user(login: $username) {
@@ -38,7 +41,7 @@ const getGithubRepos = async (username) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `token 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`
+      Authorization: `token ${ghToken}`
     },
     body: JSON.stringify({query, variables: {"username": username}})
   }
