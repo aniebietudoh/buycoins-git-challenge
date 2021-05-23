@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Home - Buycoins Challenge</title>
+  </head>
+<body>
+  <header class="is-display-flex is-content-centered has-black-background has-header-padding has-big-padding">
+    <div class="has-medium-text has-white-text">
+      <h1><i class="fab fa-github-alt"></i> GitRepoDisplay</h1>
+    </div>
+  </header>
+
+  <main class="content-wrapper is-display-flex is-content-centered is-h-centered is-flex-column is-centered">
+    <div class="margin-n-top-4 is-width-100">
+      <input class="big-search has-header-padding has-border-radius-big" 
+        type="search" name="search" id="usernameInput" placeholder="Enter a github username.." autofocus">
+    </div>
+    <div class="">
+      <button id="searchButton" class="has-button-padding mt-1 has-border-radius-small" type="submit" onclick="getSearchInput()">Search</button>
+    </div>
+  </main>
+  <script>
+  </script>
+  <script src="js/process.js"></script>
+  <script>
+    // detect enter keypress
+    const searchBox = document.getElementById("usernameInput")
+    searchBox.addEventListener("keyup", (event) => {
+      console.log(event.code)
+      if (event.code === "Enter") {
+        event.preventDefault();
+        getSearchInput();
+      }
+    });
+  </script>
+</body>
+</html>

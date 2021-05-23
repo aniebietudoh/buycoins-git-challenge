@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+  integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+  <title>Profile - Buycoins Challenge</title>
+</head>
+<body>
+  <header class="is-display-flex is-flex-centered is-header">
+    
+    <div class="logo mr-1">
+      <a href="index.html">
+        <svg class="logo-icon" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true">
+          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 
+          1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 
+          0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 
+          2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 
+          0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+    </div>
+    
+    <div class="mr-1 search-input is-display-flex">
+        <input type="text" placeholder="Search or jump to..." class="primary-search-input">  
+        <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="search" class="margin-right">
+    </div>
+   
+    <nav class="mr-1">
+      <ul class="is-hidden-mobile">
+        <li><a href="#" class="nav-link is-hidden-screensize">Pulls</a></li>
+        <li><a href="#" class="nav-link is-visible-screensize">Pull requests</a></li>
+        <li><a href="#" class="nav-link">Issues</a></li>
+        <li><a href="#" class="nav-link">Marketplace</a></li>
+        <li><a href="#" class="nav-link">Explore</a></li>
+      </ul>
+
+      <!-- Mobile navigation -->
+      <ul class="nav-menu">
+        <li><a href="#" class="nav-link">Dashboard</a></li>
+        <li><a href="#" class="nav-link">Pull requests</a></li>
+        <li><a href="#" class="nav-link">Issues</a></li>
+        <li><a href="#" class="nav-link">Marketplace</a></li>
+        <li><a href="#" class="nav-link">Explore</a></li>
+        <li><a href="#" class="nav-link">Codespaces</a></li>
+        <li><a href="#" class="nav-link">Sponsors</a></li>
+        <li><a href="#" class="nav-link">Settings</a></li>
+        <li><a href="#" class="nav-link">
+          <i class="fas fa-sign-out-alt"></i> Sign out</a>
+        </li>
+      </ul>
+
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+      <!-- Mobile logo -->
+      <div class="logo-mobile mr-1">
+        <a href="index.html">
+          <svg class="logo-icon" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true">
+            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 
+            1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 
+            0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 
+            1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2
+             0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+        </a>
+      </div>
+
+    <div class="notifications">
+      <div class="bell">
+        <a href="#" class="notification-indicator">
+          <span class="mail-status unread " data-target="notification-indicator.modifier"></span>
+          <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="notification-icon">
+            <path d="M8 16a2 2 0 001.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 008 16z"></path>
+            <path fill-rule="evenodd" d="M8 1.5A3.5 3.5 0 004.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.018.018 0 
+            00-.003.01l.001.006c0 .002.002.004.004.006a.017.017 0 00.006.004l.007.001h10.964l.007-.001a.016.016 
+            0 00.006-.004.016.016 0 00.004-.006l.001-.007a.017.017 0 00-.003-.01l-1.703-2.554a1.75 1.75 0 01-.294-.97V5A3.5 3.5 0 
+            008 1.5zM3 5a5 5 0 0110 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.518 1.518 0 0113.482 13H2.518a1.518 1.518 
+            0 01-1.263-2.36l1.703-2.554A.25.25 0 003 7.947V5z"></path>
+          </svg>
+        </a>
+      </div>
+      <details>
+        <summary>
+          <a href="#">
+            <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" height="16" width="16" class="notification-icon">
+              <path fill-rule="evenodd" d="M7.75 2a.75.75 0 01.75.75V7h4.25a.75.75 0 110 1.5H8.5v4.25a.75.75 
+              0 11-1.5 0V8.5H2.75a.75.75 0 010-1.5H7V2.75A.75.75 0 017.75 2z"></path>
+            </svg>
+            <span class="dropdown-caret"></span>
+          </a>
+      </summary>
+      </details>
+      <details>
+        <summary>
+          <a href="#">
+            <img id="avatar-image" class="avatar-image" src="https://avatars.githubusercontent.com/u/19408130?s=60&amp;v=4" alt="avatar">
+          </a>
+          <span class="dropdown-caret"></span>
+        </summary>
+      </details>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div id="isLoading">
+    <p>Loading...</p>
+  </div>
+  <div id="isLoaded">
+    <div class="top-bar-border">
+    </div>
+    <main class="row">
+      <div class="col is-width-30 sidebar">
+        <div class="image-container">
+          <img id="profile-image" src="" alt="profile image">
+        </div>
+        <div class="status-update-container">
+          <p class="status-circle">
+            <i class="far fa-smile center-icon"></i>
+          </p>
+        </div>
+        <div class="bio-container">
+          <h2 id="user_name"></h2>
+          <p id="login_name"></p>
+          <p id="bio_description" class="mt-1 is-hidden-mobile"></p>
+        </div>
+      </div>
+
+      <div class="col is-width-70 content">
+        <div class="secondary-navigation">
+          <ul>
+            <li><i class="fas fa-book-open"></i> Overview</li>
+            <li class="is-active"><a href="#"><i class="fas fa-book"></i> Repository</a> <span class="is-tag">100</span></li>
+            <li><i class="far fa-chart-bar"></i> Projects</li>
+            <li><i class="fas fa-cube"></i> Packages</li>
+          </ul>
+        </div>
+        <div class="search-box-fullwidth">
+          <input type="text" placeholder="Find a repository..." class="secondary-search-input">  
+        </div>
+
+        <div id="repositories">
+        </div>
+
+      </div>
+  </main>
+</div>
+  <script src="js/navigation.js"></script>
+  <script src="js/process.js"></script>
+  <script>
+    window.onload = checkUsernameAndLoad();
+  </script>
+</body>
+</html>
