@@ -35,7 +35,6 @@
     // detect enter keypress
     const searchBox = document.getElementById("usernameInput")
     searchBox.addEventListener("keyup", (event) => {
-      console.log(event.code)
       if (event.code === "Enter") {
         event.preventDefault();
         getSearchInput();
