@@ -124,7 +124,7 @@ const insertIntoDom = (value) => {
 
 const getSearchInput = () => {
   const searchInputBox = document.getElementById("usernameInput")
-  const username = searchInputBox.value;
+  const username = searchInputBox.value.replace(/\s+/g, '');
   if (username === "") {
     alert("You must enter a username")
     return false;
