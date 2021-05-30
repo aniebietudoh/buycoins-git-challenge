@@ -3,6 +3,21 @@ const url = 'https://api.github.com/graphql';
 // Remember to generate your github token and insert here
 const ghToken = "";
 
+
+const isLoadedText = document.getElementById("is-loaded");
+const isLoadingText = document.getElementById("is-loading");
+const repositoryContainer = document.getElementById("repositories");
+
+const submitButton = document.getElementById("search-button");
+const searchInputBox = document.getElementById("username-input");
+
+const usernameElement = document.getElementById("user-name");
+const loginNameElement = document.getElementById("login-name");
+const avatarImgElement = document.getElementById("avatar-image");
+const bioDescElement = document.getElementById("bio-description");
+const profileImgElement = document.getElementById("profile-image");
+
+
 const query = `
   query($username: String!) {
     user(login: $username) {
@@ -47,38 +62,37 @@ const getGithubRepos = async (username) => {
   }
 
   try {
-    document.getElementById("isLoading").style.display = "flex";
+    isLoadingText.style.display = "flex";
     const response = await fetch(url, options);
     result = await response.json();
-    document.getElementById("isLoading").style.display = "none";
-    document.getElementById("isLoaded").style.display = "block";
+    isLoadingText.style.display = "none";
+    isLoadedText.style.display = "block";
     insertIntoDom(result.data);
   } catch (error) {
-    document.getElementById("isLoading").style.display = "flex";
-    document.getElementById("isLoading").innerHTML = `<p>
-                                                        ${result.errors[0].message} 
-                                                        <span style="color:#7b7b7b;">
-                                                          You will be redireacted back automtically shortly...
-                                                        </span>
-                                                      </p>`;
-    document.getElementById("isLoaded").style.display = "none";
+    isLoadingText.style.display = "flex";
+    isLoadingText.innerHTML = `<p>
+                                ${result.errors[0].message} 
+                                  <span style="color:#7b7b7b;">
+                                    You will be redireacted back automtically shortly...
+                                  </span>
+                                </p>`;
+    isLoadedText.style.display = "none";
     goBack(5000)
   }
 }
 
 const insertIntoDom = (value) => {
   let childTemplate = '';
-  let repoContainer = document.getElementById("repositories");
   const repoArray = value.user.repositories.edges;
   
-  document.getElementById("user_name").innerHTML = value.user.name;
-  document.getElementById("login_name").innerHTML = value.user.login;
-  document.getElementById("bio_description").innerHTML = value.user.bio;
-  document.getElementById("avatar-image").src = value.user.avatarUrl;
-  document.getElementById("profile-image").src = value.user.avatarUrl;
+  usernameElement.innerHTML = value.user.name;
+  loginNameElement.innerHTML = value.user.login;
+  bioDescElement.innerHTML = value.user.bio;
+  avatarImgElement.src = value.user.avatarUrl;
+  profileImgElement.src = value.user.avatarUrl;
 
   for (const eachRepo of repoArray) {
-    // quick fix for empty repositories which does not contain node values for color and name
+    // quick fix for non-programming language repositories which does not contain node values for color and name
     // set node and default color values and name to avoid breaking
     if(eachRepo.node.languages.nodes.length == 0) {
       const nodes = [
@@ -119,26 +133,25 @@ const insertIntoDom = (value) => {
                           `;
     }
 
-  repoContainer.innerHTML = childTemplate;
+  repositoryContainer.innerHTML = childTemplate;
 }
 
 const getSearchInput = () => {
-  const searchInputBox = document.getElementById("usernameInput")
   const username = searchInputBox.value.replace(/\s+/g, '');
   if (username === "") {
     alert("You must enter a username")
     return false;
   } else {
-    document.getElementById("searchButton").innerHTML = "Loading...";
+    submitButton.innerHTML = "Loading...";
     const searchString = `?username=${username}`
     window.location.href = `profile.html${searchString}`;
   }
 }
 
+
 const checkUsernameAndLoad = () => {
   const theUrlParamValue = new URLSearchParams(window.location.search).get('username');
   if (theUrlParamValue === null) {
-    console.log(theUrlParamValue)
     alert("Please go back to home page and enter a username");
     window.location.href = "index.html";
   } else {
@@ -146,13 +159,17 @@ const checkUsernameAndLoad = () => {
   }
 }
 
+
 const goBack = (inSeconds) => {
   setTimeout(() => {
     window.location.href = "index.html"
   }, inSeconds);
 }
 
+
 const formatDate = (date) => {
-  return new Date(date).toLocaleString('en-us',{ day:'numeric', month:'short', year:'numeric'});
+  return new Date(date).toLocaleString(
+    'en-us',{ day:'numeric', month:'short', year:'numeric'}
+    );
 }
     

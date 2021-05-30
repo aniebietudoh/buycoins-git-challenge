@@ -464,7 +464,7 @@ ul i {
 
 
 /* Loading text */
-#isLoading {
+#is-loading {
   width: 50%;
   padding: 1em;
   display: flex;
@@ -474,7 +474,7 @@ ul i {
   justify-content: center;
 }
 
-#isLoaded, #isLoading {
+#is-loaded, #is-loading {
   display: none;
 }
 
@@ -644,7 +644,7 @@ ul i {
     padding: 0.5em 2em;
   }
 
-  #isLoading {
+  #is-loading {
     width: 80% ;
   }
 
